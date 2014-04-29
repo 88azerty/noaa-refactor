@@ -34,17 +34,19 @@ for i in InputContent[13:-9]:			#crear data array conociendo tipos de datos. dat
 			str(i.split()[12])	#DOM DIR
 		   ])
 
-#print([el[2] for el in data])
-
 OverHighCount = 0
 UnderLowCount = 0
+OverAverage = 0
+UnderAverage = 0
 
 for i in [el[2] for el in data]:		#cantidad de dias con maxima por encima del promedio de maximas
 	if i > args.highaverage:
 		OverHighCount += 1
 
-for i in [el[4] for el in data]:
+for i in [el[4] for el in data]:		#cantidad de dias con minima por debajo del promedio de minimas
 	if i < args.lowaverage:
 		UnderLowCount += 1
 
 print(OverHighCount,UnderLowCount)
+
+args.outputfile.close()
