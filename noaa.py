@@ -53,8 +53,6 @@ for i in [el[4] for el in data]:		#cantidad de dias con minima por encima del pr
 	if i >= args.average:
 		MinOverAverage += 1
 
-print(OverHighCount,UnderLowCount)
-
 with args.outputfile as g:
 	g.writelines(InputContent[0:-6])	#rellenar archivo nuevo con contenido comun ubicado en [0:-6]
 	g.write("Max >=" + str(args.highaverage).rjust(7) + ":" + str(OverHighCount).rjust(3)+'\n')	#dias con max por encima de promedio de max
